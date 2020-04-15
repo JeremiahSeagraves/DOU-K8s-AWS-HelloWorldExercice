@@ -1,0 +1,13 @@
+server:
+  error:
+    whitelabel:
+      enabled: false
+  port: 8081
+
+spring:
+  application:
+    name: dou-k8s-helloworld
+  profiles:
+    active: local
+  mvc:
+    throw-exception-if-no-handler-found: true
