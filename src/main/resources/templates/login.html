@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{fragments/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<h1>Please login</h1>
+
+<div layout:fragment="content" th:remove="tag">
+
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <h1>Login using AWS Cognito</h1>
+            <form action="#" th:action="@{/login}" th:object="${user}" method="post">
+                <div class="form-group">
+                    <tr>
+                        <td><label th:text="#{form.user.username}">Username</label>:</td>
+                        <td><input th:field="*{username}"
+                                   type="text"
+                                   id="username"
+                                   name="username"
+                                   class="form-control"
+                                   autofocus="autofocus"
+                                   placeholder="Username" th:errorclass="error-field"/>
+                        </td>
+                        <td th:if="${#fields.hasErrors('username')}">
+                            <span th:errorclass="error-field" th:errors="*{username}"/>
+                        </td>
+                    </tr>
+
+                </div>
+                <div class="form-group">
+                    <tr>
+                        <label th:text="#{form.user.password}">Password</label>:
+                        <td><input th:field="*{password}" type="password"
+                                   id="password"
+                                   name="password"
+                                   class="form-control"
+                                   placeholder="Password" th:errorclass="error-field"/>
+                        </td>
+                        <td th:if="${#fields.hasErrors('password')}">
+                            <span th:errorclass="error-field" th:errors="*{password}"/>
+                        </td>
+                    </tr>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3">
+                            <input type="submit"
+                                   name="login-submit"
+                                   id="login-submit"
+                                   class="form-control btn btn-info"
+                                   value="Log In">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

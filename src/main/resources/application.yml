@@ -9,5 +9,16 @@ spring:
     name: dou-k8s-helloworld
   profiles:
     active: local
+  thymeleaf:
+    cache: false
+    check-template: true
+    check-template-location: true
+    enabled: true
+    encoding: UTF-8
+    mode: HTML
+    prefix: classpath:/templates/
+    suffix: .html
+    servlet:
+      content-type: text/html
   mvc:
     throw-exception-if-no-handler-found: true

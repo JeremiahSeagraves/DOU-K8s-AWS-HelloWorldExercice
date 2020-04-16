@@ -1,11 +1,33 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{fragments/layout}">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <title>Index</title>
 </head>
 <body>
-<h1>Login</h1>
-<p th:text="'Hello, ' + ${name} + '!'"></p>
+<div layout:fragment="content" th:remove="tag">
+    <h1>Kubernetes, AWS Cognito & Lambda</h1>
+    <h2>Digital on Us exercise</h2>
+
+    <p>Develop a microservice with the following characteristics</p>
+    <ul>
+        <li>It must be done with spring boot</li>
+        <li>It must be deployed and running in Kubernetes.</li>
+        <li>It displays one HTML page with a login button. After the user logs in, it shows
+            an HTML page with a greeting message including the logged in user name</li>
+        <li>Login is handled by AWS Cognito.</li>
+        <li>Greeting message is retrieved from a AWS Lambda function, input: &lt;username&gt;, output: Hello &lt;username&gt; </li>
+    </ul>
+
+    <img th:src="@{/img/archi.png}" alt="archi" height="400" width="1200"/>
+
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-4">
+            <p><a href="/" class="btn btn-block btn-primary btn-lg active" role="button" th:href="@{/login}">Login!</a></p>
+        </div>
+    </div>
+</div>
 </body>
 </html>

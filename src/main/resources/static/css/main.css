@@ -1,0 +1,10 @@
+.nav-bar-brand {
+    height:90px;
+    width:100%;
+}
+
+
+.error-field{
+    border-color: red;
+    color: red;
+}
