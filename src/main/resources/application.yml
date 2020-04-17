@@ -31,5 +31,5 @@ REGION: us-east-2
 FUNCTION_NAME: HelloWorld
 
 aws:
-  accessKeyId: AKIATYEKVMI76NZXZO7K
-  secretKey: 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
+  accessKeyId: 
+  secretKey: 
