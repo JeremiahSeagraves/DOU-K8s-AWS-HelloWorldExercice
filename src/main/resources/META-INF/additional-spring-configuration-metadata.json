@@ -1,0 +1,18 @@
+{
+  "properties": [
+    {
+      "name": "POOL_ID",
+      "type": "java.lang.String",
+      "description": "AWS Cognito USERS POOL ID."
+    },
+    {
+      "name": "CLIENT_APP_ID",
+      "type": "java.lang.String",
+      "description": "AWS Cognito CLIENT APP ID."
+    },
+    {
+      "name": "REGION",
+      "type": "java.lang.String",
+      "description": "AWS REGION."
+    }
+  ] }

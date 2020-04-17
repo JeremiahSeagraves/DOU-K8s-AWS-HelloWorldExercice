@@ -2,7 +2,7 @@ server:
   error:
     whitelabel:
       enabled: false
-  port: 8081
+  port: 5000
 
 spring:
   application:
@@ -22,3 +22,14 @@ spring:
       content-type: text/html
   mvc:
     throw-exception-if-no-handler-found: true
+---
+
+POOL_ID: us-east-2_a4qnIi94Z
+CLIENT_APP_ID: 2rgkga14a5hg4sjbsg4fadh58j
+CLIENT_APP_SECRET:
+REGION: us-east-2
+FUNCTION_NAME: HelloWorld
+
+aws:
+  accessKeyId: AKIATYEKVMI76NZXZO7K
+  secretKey: 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
