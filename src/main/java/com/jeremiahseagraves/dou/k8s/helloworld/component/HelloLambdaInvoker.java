@@ -53,7 +53,7 @@ public class HelloLambdaInvoker {
 
             log.info("Lambda response: {}", response);
 
-            return response;
+            return response.replaceAll("\"", ""); //lambda returns double quoted string, don't know why
 
         } catch (ServiceException e) {
             return "";
