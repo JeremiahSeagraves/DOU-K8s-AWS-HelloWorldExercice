@@ -26,11 +26,11 @@ public class CognitoAuthenticationService implements AuthenticationService {
     @Override
     public Map<String, String> authenticate(String username, String password) {
         Map<String, String> tokenMap = new HashMap<>();
-        String jwt = getJWT(username, password).orElse("none");
-        if (jwt.compareTo("none") == 0) {
-            tokenMap.put("fail", "Couldn't authenticate with given credentials");
+        Optional<String> jwt = getJWT(username, password);
+        if (!jwt.isPresent()) {
+            tokenMap.put("error", "Couldn't authenticate with given credentials");
         } else {
-            tokenMap.put("token", jwt);
+            tokenMap.put("token", jwt.get());
         }
         return tokenMap;
     }

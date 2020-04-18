@@ -51,7 +51,7 @@ public class LoginController {
                 }
                 modelAndView.setViewName("logged");
             } else {
-                modelAndView.addObject("error", "Wrong credentials.");
+                modelAndView.addObject("error", tokenMap.get("error"));
             }
         }
         return modelAndView;
