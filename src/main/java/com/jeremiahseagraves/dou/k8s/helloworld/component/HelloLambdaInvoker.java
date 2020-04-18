@@ -19,10 +19,10 @@ import java.nio.charset.StandardCharsets;
 @RequiredArgsConstructor
 public class HelloLambdaInvoker {
 
-    @Value("${FUNCTION_NAME}")
+    @Value("${aws.functionName}")
     private String FUNCTION_NAME;
 
-    @Value("${REGION}")
+    @Value("${aws.region}")
     private String REGION;
 
     @Value("${aws.accessKeyId}")

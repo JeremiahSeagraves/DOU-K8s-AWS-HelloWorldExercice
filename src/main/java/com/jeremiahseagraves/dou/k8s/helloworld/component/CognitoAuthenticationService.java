@@ -11,16 +11,16 @@ import java.util.Optional;
 @Component("cognitoAuthenticator")
 public class CognitoAuthenticationService implements AuthenticationService {
 
-    @Value("${POOL_ID}")
+    @Value("${aws.cognito.poolId}")
     private String POOL_ID;
 
-    @Value("${CLIENT_APP_ID}")
+    @Value("${aws.cognito.clientAppId}")
     private String CLIENT_APP_ID;
 
-    @Value("${REGION}")
+    @Value("${aws.region}")
     private String REGION;
 
-    @Value("${CLIENT_APP_SECRET}")
+    @Value("${aws.cognito.clientAppSecret}")
     private String CLIENT_APP_SECRET;
 
     @Override

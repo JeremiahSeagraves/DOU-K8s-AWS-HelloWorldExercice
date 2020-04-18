@@ -1,0 +1,38 @@
+## Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-dou
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-dou
+  template:
+    metadata:
+      labels:
+        app: hello-dou
+    spec:
+      containers:
+        - name: app
+          image: com.jeremiahseagraves.dou.k8s-hello-world:0.0.1-SNAPSHOT
+          ports:
+            - containerPort: 5000
+          imagePullPolicy: IfNotPresent
+
+
+---
+
+## Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-dou
+spec:
+  selector:
+    app: hello-dou
+  ports:
+    - port: 80
+      targetPort: 5000
+  type: LoadBalancer
+
