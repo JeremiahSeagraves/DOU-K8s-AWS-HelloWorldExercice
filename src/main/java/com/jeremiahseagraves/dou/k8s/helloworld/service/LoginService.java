@@ -1,11 +1,13 @@
 package com.jeremiahseagraves.dou.k8s.helloworld.service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.jeremiahseagraves.dou.k8s.helloworld.component.AuthenticationService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import java.net.URISyntaxException;
 import java.util.Map;
 
 @Service
@@ -27,4 +29,15 @@ public class LoginService {
         log.debug("Attempting to login with username: {} and password: {}", username, password);
         return authenticationService.authenticate(username, password);
     }
+
+    public Map<String, String> getTokenMap(String code) throws URISyntaxException, JsonProcessingException {
+        log.debug("Getting token with code: {}", code);
+        return authenticationService.getTokenMap(code);
+    }
+
+    public Map<String, String> getUserInfoMap(String token) throws URISyntaxException, JsonProcessingException {
+        log.debug("Getting user info with token: {}", token);
+        return authenticationService.getUserInfo(token);
+    }
+
 }
